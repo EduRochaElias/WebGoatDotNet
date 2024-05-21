@@ -1,4 +1,13 @@
 trigger:
+- task: Veracode@3
+  inputs:
+    ConnectionDetailsSelection: 'Credentials'
+    apiId: '61f585a5cb05d6c92de38388f2b7874c'
+    apiKey: 'a00b29c073e90a75b5f5b0287a575a4085b91a8e2f12def349ee808a5b88580c6e2b99496d8439f01228f2e43f9ee514a15ac65468f1203a1203bc604d5b0b30'
+    veracodeAppProfile: '$(system.teamProject)'
+    version: '$(build.buildNumber)'
+    filepath: '$(build.artifactstagingdirectory)'
+    maximumWaitTime: '360'
 - master
 
 pool:
@@ -21,8 +30,8 @@ steps:
 - task: Veracode@3
   inputs:
     ConnectionDetailsSelection: 'Credentials'
-    apiId: '$(a66ff2ed380c285761d7453de46250dc)'
-    apiKey: '$(8eb3324a2a0970e549a000fe19a6206406080c1225aabd2db9610c09715c04ea78e709012174da99149876b6f727bdb664524a759b71e4f3b9b609ed5b73b827)'
+    apiId: '$(61f585a5cb05d6c92de38388f2b7874c)'
+    apiKey: '$(a00b29c073e90a75b5f5b0287a575a4085b91a8e2f12def349ee808a5b88580c6e2b99496d8439f01228f2e43f9ee514a15ac65468f1203a1203bc604d5b0b30)'
     veracodeAppProfile: '$(veracodeAppProfile)'
     version: '$(build.buildNumber)'
     filepath: '$(caminhoPacote)'
